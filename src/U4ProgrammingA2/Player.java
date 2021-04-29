@@ -2,16 +2,14 @@ package U4ProgrammingA2;
 
 import java.util.Iterator;
 
-/**
- *
- * @author MC03353
- */
 public class Player implements Actions {
 
     protected String firstName;
+
     protected String lastName;
+
     protected String teamName;
-    
+
     int count = 0;
 
     public void player(String firstName, String lastName) {
@@ -48,16 +46,16 @@ public class Player implements Actions {
     public void setTeam() {
         this.teamName = firstName + lastName;
     }
-    
+
     @Override
-    public void addToArrayList(){
+    public void addToArrayList() {
         String deats = (firstName + "\t" + lastName + "\t" + teamName);
         ShortStore.listPlayer.add(deats);
     }
 
     @Override
     public void add() {
-        while(ShortStore.listPlayer.size() <= 20) {
+        while (ShortStore.listPlayer.size() <= 20) {
             setFirstName();
             setLastName();
             setTeam();
@@ -68,20 +66,14 @@ public class Player implements Actions {
 
     @Override
     public void view() {
-        //this method loops the list and returns 
-
         if (ShortStore.listPlayer.isEmpty()) {
             System.out.println("Add players first");
         }
-        
         System.out.println("list" + ShortStore.listPlayer);
-        
-        //Traversing list through Iterator  
-        Iterator itr = ShortStore.listPlayer.iterator();//getting the Iterator  
-        while (itr.hasNext()) {//check if iterator has the elements  
-            System.out.println(itr.next());//printing the element and move to next  
-
-        } 
+        Iterator itr = ShortStore.listPlayer.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
     }
 
     @Override
